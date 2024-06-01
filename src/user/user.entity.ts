@@ -1,0 +1,1 @@
+// entity class for users
