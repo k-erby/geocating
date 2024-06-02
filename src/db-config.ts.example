@@ -8,6 +8,7 @@ export const ExampleMySqlDatabaseConfig: TypeOrmModuleOptions = {
     password: "your-mysql-password",
     database: "geocating-db",
     entities: ["src/**/**.entity{.ts,.js}"],
+    autoLoadEntities: true,
     synchronize: true, // should not be set to true in PROD, otherwise you lose data
     logging: true
 }
@@ -16,6 +17,7 @@ export const ExampleSqliteDatabaseConfig: TypeOrmModuleOptions = {
     type: "sqlite",
     database: "geocating-db",
     entities: ["src/**/**.entity{.ts,.js}"],
+    autoLoadEntities: true,
     synchronize: true, // should not be set to true in PROD, otherwise you lose data
     logging: true
 };

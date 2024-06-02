@@ -10,7 +10,6 @@ import "reflect-metadata"
 
 
 @Module({
-  // kerby, why won't the datasource load?
   imports: [TypeOrmModule.forRoot(DatabaseConfig)],
   controllers: [AppController],
   providers: [AppService],
