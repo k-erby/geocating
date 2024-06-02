@@ -1,11 +1,20 @@
+import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+
 interface CatConstructor {
     cat: CatInformation,
-    readonly owner: UserInformation
+    readonly owner: Partial<UserInformation>
 }
 
+@Entity("cat")
 export class Cat implements CatProvider {
+    @PrimaryGeneratedColumn()
+    id: number
+
+    @Column()
     cat: CatInformation;
-    private owner: UserInformation;
+
+    @Column()
+    private owner: Partial<UserInformation>;
 
     constructor(details: CatConstructor) {
         this.cat = details.cat;
@@ -21,7 +30,7 @@ export class Cat implements CatProvider {
     }
 
     // this should have some security around it. 
-    getOwnerInformation(): UserInformation {
+    getOwnerInformation(): Partial<UserInformation> {
         return this.owner;
     }
 }

@@ -31,5 +31,9 @@ node_modules/
 # Nest.js build / generate output
 dist
 
+# ORM
+**/db-config.ts
+geocating-db
+
 # Other
 .DS_Store

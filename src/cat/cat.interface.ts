@@ -1,7 +1,7 @@
 interface CatProvider {
     getCat(): CatInformation;
     updateCat(information: Partial<CatInformation>): void;
-    getOwnerInformation(): UserInformation;
+    getOwnerInformation(): Partial<UserInformation>;
 }
 
 interface CatInformation {

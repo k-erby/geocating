@@ -1,4 +1,13 @@
 interface UserInformation {
     name: string,
-    phoneNumber: number // oh boy how 2 type dis
+    contact: ContactInformation,
+}
+
+type ContactMethod = "email" | "phone" | "text";
+interface ContactInformation {
+    preference: ContactMethod,
+    contact: {
+        email?: string, // need strong typing here
+        phone?: string // hmm, i18n
+    }
 }
