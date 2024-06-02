@@ -1,19 +1,14 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
-
 interface CatConstructor {
     cat: CatInformation,
     readonly owner: Partial<UserInformation>
 }
 
-@Entity("cat")
+// kerby, these get things go in my service. and this entity file can go in my prisma schema instead
 export class Cat implements CatProvider {
-    @PrimaryGeneratedColumn()
     id: number
 
-    @Column()
     cat: CatInformation;
 
-    @Column()
     private owner: Partial<UserInformation>;
 
     constructor(details: CatConstructor) {

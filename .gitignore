@@ -32,8 +32,9 @@ node_modules/
 dist
 
 # ORM
-**/db-config.ts
-geocating-db
+**/migrations
+**/geocating.db
+**/geocating.db-journal
 
 # Other
 .DS_Store
